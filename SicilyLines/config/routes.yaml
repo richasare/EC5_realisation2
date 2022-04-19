@@ -1,0 +1,27 @@
+accueil:
+    path: /
+    controller: App\Controller\AccueilController::index
+
+connexion:
+    path: /connexion
+    controller: App\Controller\ConnexionController::formulaireConnexion
+
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::newMessage    
+    
+    
+    
+inscription:
+    path: /inscription
+    controller: App\Controller\InscriptionController::newUser
+
+
+traversee:
+    path: /listeTraversees
+    controller: App\Controller\ListeTraverseesController::findTraversee
+
+
+choixPassagers:
+    path: /choixPassagers/{liaisonId}
+    controller: App\Controller\ListeTraverseesController::choixPassager

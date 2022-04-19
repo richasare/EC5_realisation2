@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Nom du bateau</th>
+      <th scope="col">Port de départ</th>
+      <th scope="col">Port d'arrivé</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+        {% for traversee in traversees %}
+            <tr>
+            <td>{{traversee.date | date('y-m-d')}}</td>
+            <td>{{traversee.leBateau.nom}}</td>
+            <td>{{traversee.laLiaison.portDepart.nom}}</td>
+            <td>{{traversee.laLiaison.portArrivee.nom}}</td>
+            <td><button type="button" class="btn btn-light"><a href="{{ path('choixPassagers',{'liaisonId':traversee.laLiaison.id}) }}">Plus d'info</button></td>
+            </tr>
+            
+        {% endfor %}
+    
+    
+  </tbody>
+  </div>
+</table>
+{% endblock %}
